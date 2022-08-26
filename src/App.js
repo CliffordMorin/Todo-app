@@ -1,4 +1,3 @@
-import "./App.css";
 import { Routes, Route, Link } from "react-router-dom";
 import Login from "./Login/Login";
 import MyList from "./MyList/MyList";

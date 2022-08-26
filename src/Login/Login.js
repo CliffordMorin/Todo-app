@@ -11,24 +11,26 @@ const Login = () => {
   const [loading, setloading] = useState(false);
 
   return (
-    <div>
+    <div className="container">
+      <div className="background">
+        <div className="shape"></div>
+        <div className="shape"></div>
+      </div>
       <form>
         <h1>Rapptr Labs</h1>
-        <label className="input-wrapper">
-          Email
-          <FontAwesomeIcon className="icon" icon={faUser} beat />
-          <input type="email" name="email" placeholder="user@rapptrlabs.com" />
-        </label>
-        <label className="input-wrapper">
-          Password
-          <FontAwesomeIcon className="icon" icon={faLock} beat />
-          <input
-            type="password"
-            name="password"
-            placeholder="Must be at least 4 characters"
-          />
-        </label>
-        <input type="submit" value="Login" />
+        <label>Email</label>
+        <FontAwesomeIcon className="icon" icon={faUser} beat />
+        <input type="email" name="email" placeholder="user@rapptrlabs.com" />
+
+        <label>Password</label>
+        <FontAwesomeIcon className="icon" icon={faLock} beat />
+        <input
+          type="password"
+          name="password"
+          placeholder="Must be at least 4 characters"
+        />
+
+        <button type="submit">Login</button>
       </form>
     </div>
   );

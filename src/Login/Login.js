@@ -7,6 +7,7 @@ const Login = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [loading, setloading] = useState(false);
+  const [serverError, setserverError] = useState(false);
   const [emailError, setEmailError] = useState({ color: "", message: "" });
   const [passwordError, setPasswordError] = useState({
     color: "",
@@ -22,7 +23,7 @@ const Login = () => {
     if (!isValidEmail(e)) {
       setEmailError({
         color: "red",
-        message: "Please enter a valid email address",
+        message: "Not a valid email",
       });
     } else {
       setEmailError({ color: "green", message: "" });
@@ -60,6 +61,9 @@ const Login = () => {
           onChange={(e) => submitEmail(e.target.value)}
           required
         />
+        {emailError.message && (
+          <p style={{ color: emailError.color }}>{emailError.message}</p>
+        )}
 
         <label>Password</label>
         <FontAwesomeIcon className="icon" icon={faLock} beat />

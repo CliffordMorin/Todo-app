@@ -23,6 +23,13 @@
   bottom: -20%;
 }
 
+.redBorder {
+  border: 1px solid red;
+}
+.greenBorder {
+  border: 1px solid green;
+}
+
 form {
   height: 60%;
   width: 30%;
@@ -65,14 +72,13 @@ input {
   width: 85%;
   background-color: rgba(255, 255, 255, 0.07);
   border-radius: 3px;
-  padding: 0 30px;
+  padding: 0 35px;
   margin-top: 8px;
   font-size: 14px;
   font-weight: 300;
 }
 ::placeholder {
-  width: 100%;
-  color: #e5e5e5;
+  color: #acacac;
 }
 button {
   margin-top: 50px;
@@ -97,14 +103,17 @@ button {
     width: 65%;
   }
   input {
-    width: 74%;
+    width: 85%;
   }
   .shape:first-child {
-    left: 2%;
+    left: -50%;
     top: -20%;
   }
   .shape:last-child {
-    right: -5%;
+    right: -50%;
     bottom: -20%;
+  }
+  .background {
+    width: 200px;
   }
 }

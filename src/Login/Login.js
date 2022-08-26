@@ -31,7 +31,7 @@ const Login = () => {
 
   const submitPassword = (e) => {
     console.log(e);
-    if (e.length > 4 || e.length < 16) {
+    if (e.length < 4 || e.length > 16) {
       setPasswordError({
         color: "red",
         message: "Please enter a valid email address",

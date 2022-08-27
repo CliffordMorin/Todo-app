@@ -60,7 +60,7 @@ const Login = () => {
       // make axios post request
       const response = await axios({
         method: "post",
-        url: API,
+        url: `${API}/login`,
         data: loginFormData,
         headers: { "Content-Type": "multipart/form-data" },
       });

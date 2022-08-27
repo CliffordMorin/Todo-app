@@ -1,16 +1,21 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 import "./login.css";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [formValues, setFormValues] = useState({
     email: "",
     password: "",
   });
   const [loading, setLoading] = useState(false);
   const [serverError, setServerError] = useState(false);
+  // const [authenticated, setAuthenticated] = useState(
+  //   localStorage.getItem(localStorage.getItem("authenticated") || false)
+  // );
   const [emailError, setEmailError] = useState({ color: "", message: "" });
   const [passwordError, setPasswordError] = useState({
     color: "",
@@ -65,6 +70,12 @@ const Login = () => {
         headers: { "Content-Type": "multipart/form-data" },
       });
       console.log(response);
+      if (response.status === 200) {
+        // setAuthenticated(true);
+        // localStorage.setItem("authenticated", true);
+        setLoading(false);
+        navigate("/mylist");
+      }
     } catch (error) {
       console.log(error);
     }

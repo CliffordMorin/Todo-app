@@ -23,9 +23,9 @@
   bottom: -20%;
 }
 
-form {
-  height: 60%;
-  width: 30%;
+.loginForm {
+  height: 75%;
+  width: 35%;
   background-color: rgba(255, 255, 255, 0.13);
   position: absolute;
   transform: translate(-50%, -50%);
@@ -38,7 +38,7 @@ form {
   padding: 50px 35px;
 }
 
-form * {
+.loginForm * {
   font-family: "Poppins", sans-serif;
   color: #ffffff;
   letter-spacing: 0.5px;
@@ -46,23 +46,24 @@ form * {
   border: none;
 }
 
-form h1 {
+.loginForm h1 {
   font-size: 32px;
   font-weight: 500;
   line-height: 42px;
   text-align: center;
 }
 
-label {
+.loginLabel {
   display: block;
   margin-top: 30px;
   font-size: 16px;
   font-weight: 500;
 }
-input {
+
+.loginInput {
   display: block;
   height: 50px;
-  width: 85%;
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.07);
   border-radius: 3px;
   padding: 0 35px;
@@ -73,7 +74,8 @@ input {
 ::placeholder {
   color: #acacac;
 }
-button {
+
+.loginButton {
   margin-top: 50px;
   width: 100%;
   background-color: #ffffff;
@@ -87,16 +89,21 @@ button {
 
 .icon {
   position: absolute;
-  padding: 22px 0 0 10px;
+  padding-top: 25px;
+  left: 47px;
 }
 
 /* Media Queries */
 @media only screen and (max-width: 600px) {
-  form {
-    width: 65%;
+  .loginForm {
+    width: 80%;
   }
-  input {
-    width: 85%;
+  .loginLabel {
+    font-size: 14px;
+  }
+  ::placeholder {
+    color: #acacac;
+    font-size: 10px;
   }
   .shape:first-child {
     left: -50%;

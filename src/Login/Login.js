@@ -87,13 +87,14 @@ const Login = () => {
         <div className="shape"></div>
         <div className="shape"></div>
       </div>
-      <form onSubmit={handleSubmit}>
+      <form className="loginForm" onSubmit={handleSubmit}>
         <h1>Rapptr Labs</h1>
-        <label>Email</label>
-        <FontAwesomeIcon className="icon" icon={faUser} beat />
+        <label className="loginLabel">Email</label>
+        <FontAwesomeIcon className="icon" icon={faUser} />
         <input
           type="email"
           name="email"
+          className="loginInput"
           placeholder="user@rapptrlabs.com"
           maxLength="50"
           style={{ border: `1px solid ${emailError.color}` }}
@@ -104,11 +105,12 @@ const Login = () => {
           <p style={{ color: emailError.color }}>{emailError.message}</p>
         )}
 
-        <label>Password</label>
-        <FontAwesomeIcon className="icon" icon={faLock} beat />
+        <label className="loginLabel">Password</label>
+        <FontAwesomeIcon className="icon" icon={faLock} />
         <input
           type="password"
           name="password"
+          className="loginInput"
           placeholder="Must be at least 4 characters"
           minLength="4"
           maxLength="16"
@@ -117,7 +119,9 @@ const Login = () => {
           required
         />
 
-        <button type="submit">Login</button>
+        <button type="submit" className="loginButton">
+          Login
+        </button>
       </form>
     </div>
   );

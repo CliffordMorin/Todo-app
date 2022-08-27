@@ -1,6 +1,8 @@
 import "./mylist.css";
 import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlusSquare } from "@fortawesome/free-solid-svg-icons";
 
 const MyList = () => {
   return (
@@ -14,7 +16,7 @@ const MyList = () => {
       <form className="form">
         <input type="text" className="todo-input" />
         <button className="todo-button" type="submit">
-          <i className="fas fa-plus-square"></i>
+          <FontAwesomeIcon icon={faPlusSquare} />
         </button>
         <div className="select">
           <select name="todos" className="filter-todo">

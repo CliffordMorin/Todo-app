@@ -1,19 +1,23 @@
 import { useState } from "react";
-import "./login.css";
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
+import "./login.css";
 
 const Login = () => {
-  const [email, setemail] = useState("");
-  const [password, setpassword] = useState("");
-  const [loading, setloading] = useState(false);
-  const [serverError, setserverError] = useState(false);
+  const [formValues, setFormValues] = useState({
+    email: "",
+    password: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [serverError, setServerError] = useState(false);
   const [emailError, setEmailError] = useState({ color: "", message: "" });
   const [passwordError, setPasswordError] = useState({
     color: "",
     message: "",
   });
-  const [message, setMessage] = useState("");
+
+  const API = "http://dev.rapptrlabs.com/Tests/scripts/user-login.php";
 
   const isValidEmail = (email) => {
     return /\S+@\S+\.\S+/.test(email);
@@ -27,6 +31,7 @@ const Login = () => {
       });
     } else {
       setEmailError({ color: "green", message: "" });
+      setFormValues({ ...formValues, email: e });
     }
   };
 
@@ -39,6 +44,29 @@ const Login = () => {
       });
     } else {
       setPasswordError({ color: "green", message: "" });
+      setFormValues({ ...formValues, password: e });
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("submitting");
+    // store the states in the form data
+    const loginFormData = new FormData();
+    loginFormData.append("email", formValues.email);
+    loginFormData.append("password", formValues.password);
+
+    try {
+      // make axios post request
+      const response = await axios({
+        method: "post",
+        url: API,
+        data: loginFormData,
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      console.log(response);
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -48,7 +76,7 @@ const Login = () => {
         <div className="shape"></div>
         <div className="shape"></div>
       </div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h1>Rapptr Labs</h1>
         <label>Email</label>
         <FontAwesomeIcon className="icon" icon={faUser} beat />

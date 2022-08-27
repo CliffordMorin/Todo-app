@@ -1,7 +1,13 @@
+import "./mylist.css";
+
 const MyList = () => {
   return (
-    <div>
-      <h1>My List</h1>
+    <div className="listContainer">
+      <div className="listBackground">
+        <div className="listShape"></div>
+        <div className="listShape"></div>
+      </div>
+      <form className="form"></form>
     </div>
   );
 };

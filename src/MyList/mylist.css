@@ -4,7 +4,7 @@
   text-align: center;
   position: absolute;
   z-index: 1;
-  height: 5%;
+  height: 6%;
   width: 20%;
   background-color: rgba(255, 255, 255, 0.13);
   position: absolute;
@@ -43,7 +43,7 @@
 }
 
 .form {
-  height: 72%;
+  height: 86%;
   width: 35%;
   background-color: rgba(255, 255, 255, 0.13);
   position: absolute;
@@ -83,16 +83,17 @@
   border: none;
   background: white;
   width: 250px;
+  border-radius: 5px;
 }
 .form button {
-  color: #ff6f47;
+  color: #3fc7f4;
   background: #f7fffe;
   cursor: pointer;
   transition: all 0.3s ease;
   width: 50px;
 }
 .form button:hover {
-  background: #ff6f47;
+  background: linear-gradient(to left, #3f6cf4, #3fc7f4, #3ff4c7);
   color: white;
 }
 
@@ -113,12 +114,14 @@ select {
   margin: 1rem;
   position: relative;
   overflow: hidden;
+  border-radius: 5px;
 }
 select {
-  color: #ff6f47;
+  color: #3fc7f4;
   font-family: "Poppins", sans-serif;
   cursor: pointer;
   width: 12rem;
+  height: 1.2rem;
 }
 /* Arrow */
 .select::after {
@@ -126,8 +129,8 @@ select {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 1rem;
-  background: #ff6f47;
+  padding: 0.2rem;
+  background: #3fc7f4;
   cursor: pointer;
   pointer-events: none;
 }
@@ -135,7 +138,8 @@ select {
 /* Media Queries */
 @media only screen and (max-width: 600px) {
   .form {
-    width: 65%;
+    width: 85%;
+    height: 86%;
   }
   .listShape:first-child {
     left: -50%;
@@ -150,5 +154,6 @@ select {
   }
   .listHeader {
     width: 50%;
+    height: 6%;
   }
 }

@@ -1,0 +1,46 @@
+.list {
+  list-style: none;
+  margin: 0 0 0.5rem 3rem;
+  background: white;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+  border-radius: 10px;
+}
+
+.listItem {
+  width: 300px;
+  padding-left: 5px;
+  padding: 0.75rem;
+}
+
+.deleteButton {
+  color: #f43f6c;
+  background: #f7fffe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 50px;
+  position: absolute;
+  left: 400px;
+}
+.deleteButton:hover {
+  background: radial-gradient(#f43f6c, #f46c3f);
+  color: white;
+}
+
+.editButton {
+  color: #00b300;
+  background: #f7fffe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 50px;
+  position: absolute;
+  left: 349px;
+}
+.editButton:hover {
+  background: radial-gradient(#00b300, #00e600);
+  color: white;
+}

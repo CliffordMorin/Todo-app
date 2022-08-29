@@ -37,7 +37,7 @@
   top: -20%;
 }
 .listShape:last-child {
-  background: linear-gradient(to right, #f46c3f, #f4c73f, #f43f6c);
+  background: linear-gradient(to right, #f46c3f, #f4c73f, hwb(345 25% 4%));
   right: -25%;
   bottom: -20%;
 }
@@ -76,8 +76,32 @@
   text-align: center;
 }
 
-.form input,
-.form button {
+.newPostContainer {
+  position: absolute;
+  margin-top: -20px;
+}
+
+.todoListContainer {
+  position: absolute;
+  margin-right: 150px;
+  margin-top: 130px;
+}
+
+.todoInput {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+  width: 250px;
+  border-radius: 5px;
+  margin-top: 30%;
+}
+
+.newButton {
+  margin-left: 70%;
+}
+
+.button {
   padding: 0.5rem;
   font-size: 2rem;
   border: none;
@@ -85,54 +109,16 @@
   width: 250px;
   border-radius: 5px;
 }
-.form button {
+.button {
   color: #3fc7f4;
   background: #f7fffe;
   cursor: pointer;
   transition: all 0.3s ease;
   width: 50px;
 }
-.form button:hover {
+.button:hover {
   background: linear-gradient(to left, #3f6cf4, #3fc7f4, #3ff4c7);
   color: white;
-}
-
-/*CUSTOM SELECTOR */
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  outline: 0;
-  box-shadow: none;
-  border: 0 !important;
-  background-image: none;
-}
-
-/* Custom Select */
-.select {
-  margin: 1rem;
-  position: relative;
-  overflow: hidden;
-  border-radius: 5px;
-}
-select {
-  color: #3fc7f4;
-  font-family: "Poppins", sans-serif;
-  cursor: pointer;
-  width: 12rem;
-  height: 1.2rem;
-}
-/* Arrow */
-.select::after {
-  content: "\25BC";
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0.2rem;
-  background: #3fc7f4;
-  cursor: pointer;
-  pointer-events: none;
 }
 
 /* Media Queries */

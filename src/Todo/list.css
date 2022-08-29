@@ -8,7 +8,7 @@
   justify-content: space-between;
   align-items: center;
   transition: all 1s ease;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .listItem {
@@ -43,4 +43,30 @@
 .editButton:hover {
   background: radial-gradient(#00b300, #00e600);
   color: white;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 600px) {
+  .listItem {
+    width: 200px;
+    font-size: 15px;
+  }
+  .editButton {
+    left: 250px;
+    width: 43px;
+    height: 43px;
+    padding: 0.2rem;
+  }
+  .deleteButton {
+    left: 295px;
+    width: 43px;
+    height: 43px;
+    padding: 0.2rem;
+  }
+  .trash {
+    width: 17px;
+  }
+  .pen {
+    width: 25px;
+  }
 }

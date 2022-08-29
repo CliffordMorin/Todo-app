@@ -97,6 +97,10 @@
   margin-top: 30%;
 }
 
+.todoInput::placeholder {
+  font-size: 1.3rem;
+}
+
 .newButton {
   margin-left: 70%;
 }
@@ -141,5 +145,8 @@
   .listHeader {
     width: 50%;
     height: 6%;
+  }
+  .todoInput::placeholder {
+    font-size: 1rem;
   }
 }

@@ -10,10 +10,10 @@ const List = ({ id, text }) => {
         {text}
       </li>
       <button className="editButton button">
-        <FontAwesomeIcon icon={faPen} />
+        <FontAwesomeIcon icon={faPen} className="pen" />
       </button>
       <button className="deleteButton button">
-        <FontAwesomeIcon icon={faTrashCan} />
+        <FontAwesomeIcon icon={faTrashCan} className="trash" />
       </button>
     </div>
   );

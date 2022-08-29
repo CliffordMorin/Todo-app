@@ -1,18 +1,77 @@
-import React from "react";
+import { useState } from "react";
 import "./list.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPen, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPen,
+  faTrashCan,
+  faFloppyDisk,
+} from "@fortawesome/free-solid-svg-icons";
 
-const List = ({ id, text }) => {
+const List = ({
+  text,
+  todoList,
+  setTodoList,
+  todo,
+  inputTextHandler,
+  submitTodoHandler,
+  inputText,
+}) => {
+  const [open, setOpen] = useState(false);
+  const [editText, setEditText] = useState(text);
+
+  const deleteHandler = (e) => {
+    e.preventDefault();
+    setTodoList(todoList.filter((el) => el.id !== todo.id));
+  };
+
+  const editTextHandler = (e) => {
+    setEditText(e.target.value);
+  };
+
+  const submitEditHandler = (e) => {
+    e.preventDefault();
+    setTodoList(
+      todoList.map((el) => (el.id === todo.id ? { ...el, text: editText } : el))
+    );
+    setOpen(!open);
+  };
+
   return (
     <div className="list">
-      <li className="listItem" id={id}>
-        {text}
-      </li>
-      <button className="editButton button">
-        <FontAwesomeIcon icon={faPen} className="pen" />
-      </button>
-      <button className="deleteButton button">
+      {open ? (
+        <input
+          type="text"
+          className="listItem"
+          maxLength="25"
+          minLength="1"
+          value={editText}
+          onChange={editTextHandler}
+        />
+      ) : (
+        <li className="listItem">{text}</li>
+      )}
+      {open ? (
+        <button
+          className="saveButton button"
+          type="submit"
+          onClick={(e) => {
+            submitEditHandler(e);
+          }}
+        >
+          <FontAwesomeIcon icon={faFloppyDisk} />
+        </button>
+      ) : (
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            setOpen(!open);
+          }}
+          className="editButton button"
+        >
+          <FontAwesomeIcon icon={faPen} className="pen" />
+        </button>
+      )}
+      <button onClick={deleteHandler} className="deleteButton button">
         <FontAwesomeIcon icon={faTrashCan} className="trash" />
       </button>
     </div>

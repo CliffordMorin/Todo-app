@@ -16,7 +16,6 @@ const TodoForm = () => {
 
   const submitTodoHandler = (e) => {
     e.preventDefault();
-    console.log("hey");
     setTodoList([...todoList, { text: inputText, id: Math.random() * 1000 }]);
     setInputText("");
   };
@@ -67,7 +66,16 @@ const TodoForm = () => {
         <div className="todoListContainer">
           <ul className="todoList">
             {todoList.map((todo) => (
-              <List id={todo.id} text={todo.text} />
+              <List
+                todoList={todoList}
+                setTodoList={setTodoList}
+                key={todo.id}
+                text={todo.text}
+                inputTextHandler={inputTextHandler}
+                inputText={inputText}
+                submitTodoHandler={submitTodoHandler}
+                todo={todo}
+              />
             ))}
           </ul>
         </div>

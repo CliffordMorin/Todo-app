@@ -3,12 +3,17 @@ import { useState, useEffect } from "react";
 import List from "./List";
 import { Navigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlusSquare, faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPlusSquare,
+  faFloppyDisk,
+  faMagnifyingGlass,
+} from "@fortawesome/free-solid-svg-icons";
 
 const TodoForm = () => {
   const [open, setOpen] = useState(false);
   const [inputText, setInputText] = useState("");
   const [todoList, setTodoList] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   const inputTextHandler = (e) => {
     setInputText(e.target.value);
@@ -18,6 +23,12 @@ const TodoForm = () => {
     e.preventDefault();
     setTodoList([...todoList, { text: inputText, id: Math.random() * 1000 }]);
     setInputText("");
+  };
+
+  const searchHandler = (e) => {
+    setSearchText(e.target.value);
+    setTodoList(todoList.filter((el) => el.text.includes(searchText)));
+    console.log(todoList);
   };
 
   return (
@@ -54,6 +65,16 @@ const TodoForm = () => {
         ) : (
           <div></div>
         )}
+        <div className="searchContainer">
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+          <input
+            type="text"
+            placeholder="search"
+            maxLength="25"
+            minLength="1"
+            onChange={searchHandler}
+          />
+        </div>
         <button
           className="newButton button"
           onClick={(e) => {
@@ -71,9 +92,6 @@ const TodoForm = () => {
                 setTodoList={setTodoList}
                 key={todo.id}
                 text={todo.text}
-                inputTextHandler={inputTextHandler}
-                inputText={inputText}
-                submitTodoHandler={submitTodoHandler}
                 todo={todo}
               />
             ))}

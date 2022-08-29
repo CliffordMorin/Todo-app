@@ -83,7 +83,6 @@
 
 .todoListContainer {
   position: absolute;
-  margin-right: 150px;
   margin-top: 130px;
 }
 
@@ -102,7 +101,8 @@
 }
 
 .newButton {
-  margin-left: 70%;
+  margin-left: 78%;
+  position: absolute;
 }
 
 .button {
@@ -130,6 +130,9 @@
   .form {
     width: 85%;
     height: 86%;
+  }
+  .todoListContainer {
+    margin-top: 130px;
   }
   .listShape:first-child {
     left: -50%;

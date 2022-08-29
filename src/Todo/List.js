@@ -7,15 +7,7 @@ import {
   faFloppyDisk,
 } from "@fortawesome/free-solid-svg-icons";
 
-const List = ({
-  text,
-  todoList,
-  setTodoList,
-  todo,
-  inputTextHandler,
-  submitTodoHandler,
-  inputText,
-}) => {
+const List = ({ text, todoList, setTodoList, todo }) => {
   const [open, setOpen] = useState(false);
   const [editText, setEditText] = useState(text);
 
@@ -41,7 +33,7 @@ const List = ({
       {open ? (
         <input
           type="text"
-          className="listItem"
+          className="inputItem"
           maxLength="25"
           minLength="1"
           value={editText}

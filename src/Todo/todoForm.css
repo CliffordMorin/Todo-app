@@ -37,7 +37,7 @@
   top: -20%;
 }
 .listShape:last-child {
-  background: linear-gradient(to right, #f46c3f, #f4c73f, hwb(345 25% 4%));
+  background: linear-gradient(to right, #f46c3f, #f4c73f, #f5406d);
   right: -25%;
   bottom: -20%;
 }
@@ -45,14 +45,14 @@
 .form {
   height: 86%;
   width: 35%;
-  background-color: rgba(255, 255, 255, 0.13);
+  background-color: #ffffff21;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
   border-radius: 10px;
   backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid #ffffff1a;
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   padding: 50px 35px;
   min-height: 20vh;
@@ -106,6 +106,22 @@
   position: absolute;
 }
 
+.logoutButton {
+  margin-left: 78%;
+  margin-top: 10px;
+  position: absolute;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background: #3f6cf4;
+  cursor: pointer;
+  color: #ffffff;
+}
+.logoutButton:hover {
+  background-color: #f5406d;
+}
+
 .button {
   padding: 0.5rem;
   font-size: 2rem;
@@ -125,12 +141,42 @@
   background: linear-gradient(to left, #3f6cf4, #3fc7f4, #3ff4c7);
   color: white;
 }
-
+.searchContainer {
+  position: absolute;
+  margin-top: -7px;
+  margin-right: 100px;
+  font-size: 20px;
+}
+.magIcon {
+  position: absolute;
+  padding-top: 25px;
+  left: 10px;
+}
+.searchInput {
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 3px;
+  padding: 0 35px;
+  margin-top: 8px;
+  font-size: 20px;
+  font-weight: 300;
+  border: none;
+  color: #ffffff;
+}
+.searchInput::placeholder {
+  font-size: 20px;
+  color: #767676;
+}
 /* Media Queries */
 @media only screen and (max-width: 600px) {
   .form {
     width: 85%;
     height: 86%;
+  }
+  .logoutButton {
+    font-size: 17px;
   }
   .todoListContainer {
     margin-top: 130px;
@@ -149,6 +195,7 @@
   .listHeader {
     width: 50%;
     height: 6%;
+    font-size: 1.8rem;
   }
   .todoInput::placeholder {
     font-size: 1rem;

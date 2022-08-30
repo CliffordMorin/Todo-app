@@ -1,15 +1,17 @@
 import "./todoForm.css";
 import { useState, useEffect } from "react";
 import List from "./List";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlusSquare,
   faFloppyDisk,
   faMagnifyingGlass,
+  faArrowRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 
 const TodoForm = () => {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [inputText, setInputText] = useState("");
   const [todoList, setTodoList] = useState(
@@ -30,13 +32,16 @@ const TodoForm = () => {
   const submitTodoHandler = (e) => {
     e.preventDefault();
     setTodoList([...todoList, { text: inputText, id: Math.random() * 1000 }]);
-
     setInputText("");
   };
 
   return (
     <div className="listContainer">
       <header className="listHeader">My Todo List</header>
+      <button className="logoutButton " onClick={(e) => navigate("/")}>
+        <FontAwesomeIcon icon={faArrowRightFromBracket} />
+        Logout
+      </button>
       <div className="listBackground">
         <div className="listShape"></div>
         <div className="listShape"></div>
@@ -69,10 +74,11 @@ const TodoForm = () => {
           <div></div>
         )}
         <div className="searchContainer">
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
+          <FontAwesomeIcon icon={faMagnifyingGlass} className="magIcon" />
           <input
             type="text"
-            placeholder="search"
+            placeholder="search..."
+            className="searchInput"
             maxLength="25"
             minLength="1"
             value={searchText}

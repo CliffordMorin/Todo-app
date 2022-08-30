@@ -21,8 +21,8 @@ const Login = () => {
     color: "",
     message: "",
   });
-
-  const API = "http://dev.rapptrlabs.com/Tests/scripts/user-login.php";
+  //left out http or https due to errors with the request after deployment
+  const API = "//dev.rapptrlabs.com/Tests/scripts/user-login.php";
 
   const isValidEmail = (email) => {
     return /\S+@\S+\.\S+/.test(email);

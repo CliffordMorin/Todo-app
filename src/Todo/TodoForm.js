@@ -12,11 +12,15 @@ import {
 const TodoForm = () => {
   const [open, setOpen] = useState(false);
   const [inputText, setInputText] = useState("");
-  const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState(
+    JSON.parse(localStorage.getItem("todoList"))
+  );
   const [searchText, setSearchText] = useState("");
 
   //USE EFFECT
-  useEffect(() => {}, [todoList]);
+  useEffect(() => {
+    window.localStorage.setItem("todoList", JSON.stringify(todoList));
+  }, [todoList]);
 
   //Functions
   const inputTextHandler = (e) => {
@@ -26,6 +30,7 @@ const TodoForm = () => {
   const submitTodoHandler = (e) => {
     e.preventDefault();
     setTodoList([...todoList, { text: inputText, id: Math.random() * 1000 }]);
+
     setInputText("");
   };
 

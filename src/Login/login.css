@@ -47,7 +47,7 @@
 }
 
 .loginForm h1 {
-  font-size: 32px;
+  font-size: 55px;
   font-weight: 500;
   line-height: 42px;
   text-align: center;
@@ -111,6 +111,12 @@
 @media only screen and (max-width: 600px) {
   .loginForm {
     width: 80%;
+  }
+  .loginForm h1 {
+    font-size: 40px;
+  }
+  .loginError {
+    margin-left: 10px;
   }
   .loginLabel {
     font-size: 14px;

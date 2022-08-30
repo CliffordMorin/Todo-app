@@ -88,7 +88,7 @@ const Login = () => {
         <div className="shape"></div>
       </div>
       <form className="loginForm" onSubmit={handleSubmit}>
-        <h1>Rapptr Labs</h1>
+        <h1 className="loginHeader">Rapptr Labs</h1>
         <label className="loginLabel">Email</label>
         <FontAwesomeIcon className="icon" icon={faUser} />
         <input

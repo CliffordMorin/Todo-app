@@ -21,6 +21,7 @@
   width: 300px;
   padding-left: 5px;
   padding: 0.75rem;
+  font-size: 1.3rem;
 }
 
 .deleteButton {
@@ -47,6 +48,11 @@
   color: white;
 }
 
+.saveButton {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
 /* Media Queries */
 @media only screen and (max-width: 600px) {
   .listItem {
@@ -55,7 +61,7 @@
   }
   .inputItem {
     width: 200px;
-    font-size: 15px;
+    font-size: 12px;
   }
   .editButton {
     left: 250px;
@@ -68,6 +74,10 @@
     width: 43px;
     height: 43px;
     padding: 0.2rem;
+  }
+  .saveButton {
+    font-size: 25px;
+    width: 50px;
   }
   .trash {
     width: 17px;

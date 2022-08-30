@@ -123,24 +123,21 @@
 }
 
 .button {
-  padding: 0.5rem;
-  font-size: 2rem;
-  border: none;
-  background: white;
-  width: 250px;
-  border-radius: 5px;
-}
-.button {
   color: #3fc7f4;
   background: #f7fffe;
   cursor: pointer;
   transition: all 0.3s ease;
   width: 50px;
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  border-radius: 5px;
 }
 .button:hover {
   background: linear-gradient(to left, #3f6cf4, #3fc7f4, #3ff4c7);
   color: white;
 }
+
 .searchContainer {
   position: absolute;
   margin-top: -7px;
@@ -178,8 +175,21 @@
   .logoutButton {
     font-size: 17px;
   }
+  .saveNewButton {
+    font-size: 17px;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    transform: translate(255%, 210%);
+  }
+  .floppyIcon {
+    font-size: 25px;
+  }
+  .newPostContainer {
+    position: relative;
+  }
   .todoListContainer {
-    margin-top: 130px;
+    margin-top: 115px;
   }
   .listShape:first-child {
     left: -50%;
@@ -196,6 +206,12 @@
     width: 50%;
     height: 6%;
     font-size: 1.8rem;
+  }
+  .todoInput {
+    height: 40px;
+    font-size: 1rem;
+    position: absolute;
+    transform: translate(-57%, 210%);
   }
   .todoInput::placeholder {
     font-size: 1rem;

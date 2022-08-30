@@ -60,14 +60,14 @@ const TodoForm = () => {
               onChange={inputTextHandler}
             />
             <button
-              className="saveButton button"
+              className="saveNewButton button"
               type="submit"
               onClick={(e) => {
                 setOpen(!open);
                 submitTodoHandler(e);
               }}
             >
-              <FontAwesomeIcon icon={faFloppyDisk} />
+              <FontAwesomeIcon icon={faFloppyDisk} className="floppyIcon" />
             </button>
           </div>
         ) : (

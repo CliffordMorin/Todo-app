@@ -15,6 +15,10 @@ const TodoForm = () => {
   const [todoList, setTodoList] = useState([]);
   const [searchText, setSearchText] = useState("");
 
+  //USE EFFECT
+  useEffect(() => {}, [todoList]);
+
+  //Functions
   const inputTextHandler = (e) => {
     setInputText(e.target.value);
   };
@@ -23,12 +27,6 @@ const TodoForm = () => {
     e.preventDefault();
     setTodoList([...todoList, { text: inputText, id: Math.random() * 1000 }]);
     setInputText("");
-  };
-
-  const searchHandler = (e) => {
-    setSearchText(e.target.value);
-    setTodoList(todoList.filter((el) => el.text.includes(searchText)));
-    console.log(todoList);
   };
 
   return (
@@ -46,7 +44,7 @@ const TodoForm = () => {
               type="text"
               className="todoInput"
               maxLength="25"
-              minLength="1"
+              minLength="2"
               placeholder="What do you need to do?"
               value={inputText}
               onChange={inputTextHandler}
@@ -72,7 +70,8 @@ const TodoForm = () => {
             placeholder="search"
             maxLength="25"
             minLength="1"
-            onChange={searchHandler}
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
           />
         </div>
         <button
@@ -86,15 +85,27 @@ const TodoForm = () => {
         </button>
         <div className="todoListContainer">
           <ul className="todoList">
-            {todoList.map((todo) => (
-              <List
-                todoList={todoList}
-                setTodoList={setTodoList}
-                key={todo.id}
-                text={todo.text}
-                todo={todo}
-              />
-            ))}
+            {todoList
+              .filter((todo) => {
+                if (searchText === "") {
+                  return todo;
+                } else if (
+                  todo.text.toLowerCase().includes(searchText.toLowerCase())
+                ) {
+                  return todo;
+                } else {
+                  return null;
+                }
+              })
+              .map((todo) => (
+                <List
+                  todoList={todoList}
+                  setTodoList={setTodoList}
+                  key={todo.id}
+                  text={todo.text}
+                  todo={todo}
+                />
+              ))}
           </ul>
         </div>
       </form>

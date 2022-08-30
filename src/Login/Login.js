@@ -41,7 +41,6 @@ const Login = () => {
   };
 
   const submitPassword = (e) => {
-    console.log(e);
     if (e.length < 4 || e.length > 16) {
       setPasswordError({
         color: "red",
@@ -55,7 +54,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("submitting");
+
     // store the states in the form data
     const loginFormData = new FormData();
     loginFormData.append("email", formValues.email);
@@ -69,7 +68,7 @@ const Login = () => {
         data: loginFormData,
         headers: { "Content-Type": "multipart/form-data" },
       });
-      console.log(response);
+
       if (response.status === 200) {
         // setAuthenticated(true);
         // localStorage.setItem("authenticated", true);
@@ -119,7 +118,15 @@ const Login = () => {
           required
         />
 
-        <button type="submit" className="loginButton">
+        <button
+          type="submit"
+          className={
+            "loginButton " +
+            (emailError.color === "green" && passwordError.color === "green"
+              ? ""
+              : "deactivated")
+          }
+        >
           Login
         </button>
       </form>

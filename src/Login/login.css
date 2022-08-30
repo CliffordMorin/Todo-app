@@ -87,6 +87,12 @@
   cursor: pointer;
 }
 
+.deactivated {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .icon {
   position: absolute;
   padding-top: 25px;

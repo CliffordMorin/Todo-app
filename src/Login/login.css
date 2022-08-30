@@ -93,6 +93,14 @@
   pointer-events: none;
 }
 
+.loginError {
+  color: #ff0000;
+  font-size: 14px;
+  font-weight: 300;
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
 .icon {
   position: absolute;
   padding-top: 25px;

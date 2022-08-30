@@ -77,6 +77,7 @@ const Login = () => {
       }
     } catch (error) {
       console.log(error);
+      setServerError(!serverError);
     }
   };
 
@@ -129,6 +130,11 @@ const Login = () => {
         >
           Login
         </button>
+        {serverError && (
+          <p className="loginError">
+            There was an error with your login. Please try again.
+          </p>
+        )}
       </form>
     </div>
   );

@@ -10,8 +10,8 @@ import {
   faArrowRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 
-const TodoForm = () => {
-  const navigate = useNavigate();
+const TodoForm = ({ authenticated, setAuthenticated }) => {
+  // const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [inputText, setInputText] = useState("");
   //set the todoList from local storage if it exists or create an empty array if it doesn't
@@ -40,14 +40,21 @@ const TodoForm = () => {
       setTodoList([...todoList, { text: inputText, id: Math.random() * 1000 }]);
       setInputText("");
     } else {
-      alert("Please enter something todo! Life is too short to do nothing!");
+      alert("Please enter something to do! Life is too short to do nothing!");
     }
+  };
+
+  //Logout user
+  const logoutHandler = (e) => {
+    e.preventDefault();
+    setAuthenticated(false);
+    localStorage.setItem("authenticated", false);
   };
 
   return (
     <div className="listContainer">
       <header className="listHeader">My Todo List</header>
-      <button className="logoutButton " onClick={(e) => navigate("/")}>
+      <button className="logoutButton " onClick={logoutHandler}>
         <FontAwesomeIcon icon={faArrowRightFromBracket} />
         Logout
       </button>

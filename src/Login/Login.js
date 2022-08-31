@@ -5,17 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 import "./login.css";
 
-const Login = () => {
+const Login = ({ authenticated, setAuthenticated }) => {
   const navigate = useNavigate();
   const [formValues, setFormValues] = useState({
     email: "",
     password: "",
   });
-  const [loading, setLoading] = useState(false);
   const [serverError, setServerError] = useState(false);
-  // const [authenticated, setAuthenticated] = useState(
-  //   localStorage.getItem(localStorage.getItem("authenticated") || false)
-  // );
   const [emailError, setEmailError] = useState({ color: "", message: "" });
   const [passwordError, setPasswordError] = useState({
     color: "",
@@ -55,7 +51,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // store the states in the form data
+    // store the states in the form data using a key value pair
     const loginFormData = new FormData();
     loginFormData.append("email", formValues.email);
     loginFormData.append("password", formValues.password);
@@ -70,10 +66,8 @@ const Login = () => {
       });
 
       if (response.status === 200) {
-        // setAuthenticated(true);
-        // localStorage.setItem("authenticated", true);
-        setLoading(false);
-        navigate("/mylist");
+        setAuthenticated(true);
+        localStorage.setItem("authenticated", true);
       }
     } catch (error) {
       console.log(error);

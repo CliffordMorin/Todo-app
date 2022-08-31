@@ -22,6 +22,7 @@ const List = ({ text, todoList, setTodoList, todo }) => {
 
   const submitEditHandler = (e) => {
     e.preventDefault();
+    // Edit the todo text and set the open state to false
     setTodoList(
       todoList.map((el) => (el.id === todo.id ? { ...el, text: editText } : el))
     );

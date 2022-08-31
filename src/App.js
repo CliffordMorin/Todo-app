@@ -8,6 +8,7 @@ function App() {
   const navigate = useNavigate();
   const [authenticated, setAuthenticated] = useState(false);
 
+  //useEffect to check if the user is authenticated or not
   useEffect(() => {
     const auth = localStorage.getItem("authenticated");
     if (auth === "true") {
@@ -17,6 +18,7 @@ function App() {
     }
   }, []);
 
+  //navigation based on the authentication status
   useEffect(() => {
     if (authenticated) {
       navigate("/mylist");

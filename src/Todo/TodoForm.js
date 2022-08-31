@@ -14,12 +14,14 @@ const TodoForm = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [inputText, setInputText] = useState("");
+  //set the todoList from local storage if it exists or create an empty array if it doesn't
   const [todoList, setTodoList] = useState(
-    JSON.parse(localStorage.getItem("todoList"))
+    JSON.parse(localStorage.getItem("todoList")) || []
   );
   const [searchText, setSearchText] = useState("");
 
   //USE EFFECT
+  //Every time the todoList changes, save it to local storage
   useEffect(() => {
     window.localStorage.setItem("todoList", JSON.stringify(todoList));
   }, [todoList]);
@@ -31,8 +33,15 @@ const TodoForm = () => {
 
   const submitTodoHandler = (e) => {
     e.preventDefault();
-    setTodoList([...todoList, { text: inputText, id: Math.random() * 1000 }]);
-    setInputText("");
+    //if the input text is not empty, add it to the todoList and reset the input text
+    if (inputText !== "") {
+      /* add the new todo to the todoList, there is a better way to generate the id using a package 
+      like react-id-generator or uuid but I'm not using those packages for this project */
+      setTodoList([...todoList, { text: inputText, id: Math.random() * 1000 }]);
+      setInputText("");
+    } else {
+      alert("Please enter something todo! Life is too short to do nothing!");
+    }
   };
 
   return (

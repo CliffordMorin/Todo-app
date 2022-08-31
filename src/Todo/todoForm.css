@@ -59,16 +59,8 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  overflow: scroll;
+  overflow: auto;
 }
-
-/* .form * {
-  font-family: "Poppins", sans-serif;
-  color: #ffffff;
-  letter-spacing: 0.5px;
-  outline: none;
-  border: none;
-} */
 
 .form h1 {
   font-size: 32px;
@@ -164,7 +156,7 @@
 }
 .searchInput::placeholder {
   font-size: 20px;
-  color: #767676;
+  color: #ffffff;
 }
 /* Media Queries */
 @media only screen and (max-width: 600px) {

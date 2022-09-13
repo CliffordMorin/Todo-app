@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import Login from "./Login/Login";
-import TodoForm from "./Todo/TodoForm";
-import Page404 from "./Page404/Page404";
+import Login from "./Login/Login.tsx";
+import TodoForm from "./Todo/TodoForm.tsx";
+import Page404 from "./Page404/Page404.tsx";
 
 function App() {
   const navigate = useNavigate();

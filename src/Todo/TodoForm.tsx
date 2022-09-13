@@ -1,6 +1,6 @@
 import "./todoForm.css";
 import { useState, useEffect } from "react";
-import List from "./List";
+import List from "./List.tsx";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

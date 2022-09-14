@@ -1,14 +1,17 @@
 :root {
-  --delete: #f43f6c;
-  --deleteHover: radial-gradient(#f43f6c, #f46c3f);
-  --white: #f7fffe;
-  --edit: #00b300;
-  --editHover: radial-gradient(#00b300, #00e600);
+  --deleteBtn: #f43f6c;
+  --deleteBtnHover: radial-gradient(#f43f6c, #f46c3f);
+  --light: #f7fffe;
+  --editBtn: #00b300;
+  --editBtnHover: radial-gradient(#00b300, #00e600);
   --formBackground: #ffffff21;
   --formBackgroundBorder: #ffffff1a;
   --formBackgroundShadow: 0 0 40px rgba(8, 7, 16, 0.6);
   --circle1: linear-gradient(to left, #3f6cf4, #3fc7f4, #3ff4c7);
   --circle2: linear-gradient(to right, #f46c3f, #f4c73f, #f5406d);
+  --logoutBtn: #3f6cf4;
+  --logoutBtnHover: #f5406d;
+  --primaryBtn: #3fc7f4;
 }
 
 * {

@@ -13,12 +13,12 @@
   border-radius: 50%;
 }
 .shape:first-child {
-  background: linear-gradient(to left, #3f6cf4, #3fc7f4, #3ff4c7);
+  background: var(--circle1);
   left: -30%;
   top: -20%;
 }
 .shape:last-child {
-  background: linear-gradient(to right, #f46c3f, #f4c73f, #f43f6c);
+  background: var(--circle2);
   right: -25%;
   bottom: -20%;
 }
@@ -26,21 +26,21 @@
 .loginForm {
   height: 75%;
   width: 35%;
-  background-color: rgba(255, 255, 255, 0.13);
+  background-color: var(--formBackground);
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
   border-radius: 10px;
   backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  border: 2px solid var(--formBackgroundBorder);
+  box-shadow: var(--formBackgroundShadow);
   padding: 50px 35px;
 }
 
 .loginForm * {
   font-family: "Poppins", sans-serif;
-  color: #ffffff;
+  color: var(--light);
   letter-spacing: 0.5px;
   outline: none;
   border: none;
@@ -64,7 +64,7 @@
   display: block;
   height: 50px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.07);
+  background-color: var(--formBackground);
   border-radius: 3px;
   padding: 0 35px;
   margin-top: 8px;
@@ -78,7 +78,7 @@
 .loginButton {
   margin-top: 50px;
   width: 100%;
-  background-color: #ffffff;
+  background-color: var(--light);
   color: #080710;
   padding: 15px 0;
   font-size: 18px;

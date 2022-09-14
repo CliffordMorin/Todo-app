@@ -1,7 +1,7 @@
 .list {
   list-style: none;
   margin-bottom: 0.5rem;
-  background: white;
+  background: var(--light);
   font-size: 1.5rem;
   color: black;
   display: flex;
@@ -25,27 +25,27 @@
 }
 
 .deleteButton {
-  color: #f43f6c;
-  background: #f7fffe;
+  color: var(--deleteBtn);
+  background: var(--light);
   cursor: pointer;
   transition: all 0.3s ease;
   width: 50px;
 }
 .deleteButton:hover {
-  background: radial-gradient(#f43f6c, #f46c3f);
-  color: white;
+  background: var(--deleteBtnHover);
+  color: var(--light);
 }
 
 .editButton {
-  color: #00b300;
-  background: #f7fffe;
+  color: var(--editBtn);
+  background: var(--light);
   cursor: pointer;
   transition: all 0.3s ease;
   width: 50px;
 }
 .editButton:hover {
-  background: radial-gradient(#00b300, #00e600);
-  color: white;
+  background: var(--editBtnHover);
+  color: var(--light);
 }
 
 .saveButton {

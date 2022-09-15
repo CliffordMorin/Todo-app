@@ -12,15 +12,41 @@
   position: absolute;
   border-radius: 50%;
 }
-.shape:first-child {
+.circle1 {
   background: var(--circle1);
   left: -30%;
   top: -20%;
 }
-.shape:last-child {
+
+@keyframes glideDown {
+  from {
+    left: -30%;
+    top: -20%;
+  }
+
+  to {
+    left: -30%;
+    top: 80%;
+  }
+}
+
+.circle2 {
   background: var(--circle2);
   right: -25%;
   bottom: -20%;
+  animation: glideUp 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes glideUp {
+  from {
+    right: -25%;
+    bottom: -20%;
+  }
+
+  to {
+    right: -25%;
+    bottom: 80%;
+  }
 }
 
 .loginForm {
@@ -125,14 +151,40 @@
     color: #acacac;
     font-size: 10px;
   }
-  .shape:first-child {
+  .circle1 {
     left: -50%;
     top: -20%;
   }
-  .shape:last-child {
+
+  @keyframes glideDown {
+    from {
+      left: -50%;
+      top: -20%;
+    }
+
+    to {
+      left: -50%;
+      top: 80%;
+    }
+  }
+
+  .circle2 {
     right: -50%;
     bottom: -20%;
   }
+
+  @keyframes glideUp {
+    from {
+      right: -50%;
+      bottom: -20%;
+    }
+
+    to {
+      right: -50%;
+      bottom: 80%;
+    }
+  }
+
   .background {
     width: 200px;
   }

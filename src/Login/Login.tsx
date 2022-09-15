@@ -17,6 +17,7 @@ const Login = ({ authenticated, setAuthenticated }) => {
     color: "",
     message: "",
   });
+  const [animate, setAnimate] = useState(false);
   //left out http or https due to errors with the request after deployment
   const API = "//dev.rapptrlabs.com/Tests/scripts/user-login.php";
 
@@ -66,8 +67,12 @@ const Login = ({ authenticated, setAuthenticated }) => {
       });
 
       if (response.status === 200) {
-        setAuthenticated(true);
-        localStorage.setItem("authenticated", true);
+        setAnimate(!animate);
+        setTimeout(() => {
+          setAuthenticated(true);
+          localStorage.setItem("authenticated", true);
+          console.log("hey");
+        }, 2500);
       }
     } catch (error) {
       console.log(error);
@@ -78,8 +83,22 @@ const Login = ({ authenticated, setAuthenticated }) => {
   return (
     <div className="container">
       <div className="background">
-        <div className="shape"></div>
-        <div className="shape"></div>
+        <div
+          className="shape circle1"
+          style={{
+            animation: animate
+              ? "glideDown 2.5s ease-in-out infinite alternate"
+              : "none",
+          }}
+        ></div>
+        <div
+          className="shape circle2"
+          style={{
+            animation: animate
+              ? "glideUp 2.5s ease-in-out infinite alternate"
+              : "none",
+          }}
+        ></div>
       </div>
       <form className="loginForm" onSubmit={handleSubmit}>
         <h1 className="loginHeader">Rapptr Labs</h1>

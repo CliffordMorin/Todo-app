@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 import "./login.css";
 
 const Login = ({ authenticated, setAuthenticated }) => {
-  const navigate = useNavigate();
   const [formValues, setFormValues] = useState({
     email: "",
     password: "",
@@ -72,7 +70,7 @@ const Login = ({ authenticated, setAuthenticated }) => {
           setAuthenticated(true);
           localStorage.setItem("authenticated", true);
           console.log("hey");
-        }, 2500);
+        }, 2000);
       }
     } catch (error) {
       console.log(error);
@@ -87,7 +85,7 @@ const Login = ({ authenticated, setAuthenticated }) => {
           className="shape circle1"
           style={{
             animation: animate
-              ? "glideDown 2.5s ease-in-out infinite alternate"
+              ? "glideDown 2s ease-in-out infinite alternate"
               : "none",
           }}
         ></div>
@@ -95,7 +93,7 @@ const Login = ({ authenticated, setAuthenticated }) => {
           className="shape circle2"
           style={{
             animation: animate
-              ? "glideUp 2.5s ease-in-out infinite alternate"
+              ? "glideUp 2s ease-in-out infinite alternate"
               : "none",
           }}
         ></div>

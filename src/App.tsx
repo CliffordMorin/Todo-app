@@ -7,6 +7,7 @@ import Page404 from "./Page404/Page404.tsx";
 function App() {
   const navigate = useNavigate();
   const [authenticated, setAuthenticated] = useState(false);
+  const [animate, setAnimate] = useState(false);
 
   //useEffect to check if the user is authenticated or not
   useEffect(() => {
@@ -36,6 +37,8 @@ function App() {
             <Login
               authenticated={authenticated}
               setAuthenticated={setAuthenticated}
+              animate={animate}
+              setAnimate={setAnimate}
             />
           }
         />
@@ -45,6 +48,8 @@ function App() {
             <TodoForm
               authenticated={authenticated}
               setAuthenticated={setAuthenticated}
+              animate={animate}
+              setAnimate={setAnimate}
             />
           }
         />

@@ -1,7 +1,7 @@
 import "./todoForm.css";
 import { useState, useEffect } from "react";
 import List from "./List.tsx";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlusSquare,
@@ -10,7 +10,7 @@ import {
   faArrowRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 
-const TodoForm = ({ authenticated, setAuthenticated }) => {
+const TodoForm = ({ authenticated, setAuthenticated, animate, setAnimate }) => {
   // const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [inputText, setInputText] = useState("");
@@ -47,8 +47,12 @@ const TodoForm = ({ authenticated, setAuthenticated }) => {
   //Logout user
   const logoutHandler = (e) => {
     e.preventDefault();
-    setAuthenticated(false);
-    localStorage.setItem("authenticated", false);
+    setAnimate(true);
+    setTimeout(() => {
+      setAuthenticated(false);
+      localStorage.setItem("authenticated", false);
+      setAnimate(false);
+    }, 2000);
   };
 
   return (
@@ -59,8 +63,22 @@ const TodoForm = ({ authenticated, setAuthenticated }) => {
         Logout
       </button>
       <div className="listBackground">
-        <div className="listShape"></div>
-        <div className="listShape"></div>
+        <div
+          className="listShape circle3"
+          style={{
+            animation: animate
+              ? "slideDown 2s ease-in-out infinite alternate"
+              : "none",
+          }}
+        ></div>
+        <div
+          className="listShape circle4"
+          style={{
+            animation: animate
+              ? "slideUp 2s ease-in-out infinite alternate"
+              : "none",
+          }}
+        ></div>
       </div>
 
       <form className="form">

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 import "./login.css";
 
-const Login = ({ authenticated, setAuthenticated }) => {
+const Login = ({ authenticated, setAuthenticated, animate, setAnimate }) => {
   const [formValues, setFormValues] = useState({
     email: "",
     password: "",
@@ -15,7 +15,7 @@ const Login = ({ authenticated, setAuthenticated }) => {
     color: "",
     message: "",
   });
-  const [animate, setAnimate] = useState(false);
+
   //left out http or https due to errors with the request after deployment
   const API = "//dev.rapptrlabs.com/Tests/scripts/user-login.php";
 
@@ -65,11 +65,11 @@ const Login = ({ authenticated, setAuthenticated }) => {
       });
 
       if (response.status === 200) {
-        setAnimate(!animate);
+        setAnimate(true);
         setTimeout(() => {
           setAuthenticated(true);
           localStorage.setItem("authenticated", true);
-          console.log("hey");
+          setAnimate(false);
         }, 2000);
       }
     } catch (error) {

@@ -31,15 +31,40 @@
   position: absolute;
   border-radius: 50%;
 }
-.listShape:first-child {
+.circle3 {
   background: var(--circle1);
   left: -30%;
   top: -20%;
 }
-.listShape:last-child {
+.circle4 {
   background: var(--circle2);
   right: -25%;
   bottom: -20%;
+}
+
+/* Keyframes animation variables */
+@keyframes slideDown {
+  from {
+    left: -30%;
+    top: -20%;
+  }
+
+  to {
+    left: -30%;
+    top: 81%;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    right: -25%;
+    bottom: -20%;
+  }
+
+  to {
+    right: -25%;
+    bottom: 81%;
+  }
 }
 
 .form {
@@ -108,7 +133,7 @@
   border: none;
   background: var(--logoutBtn);
   cursor: pointer;
-  color: #ffffff;
+  color: var(--light);
 }
 .logoutButton:hover {
   background-color: var(--logoutBtnHover);
@@ -183,13 +208,37 @@
   .todoListContainer {
     margin-top: 115px;
   }
-  .listShape:first-child {
+  .circle3 {
     left: -50%;
-    top: -20%;
+    top: -25%;
   }
-  .listShape:last-child {
+  .circle4 {
     right: -50%;
     bottom: -20%;
+  }
+  /* Keyframes animation variables */
+  @keyframes slideDown {
+    from {
+      left: -50%;
+      top: -20%;
+    }
+
+    to {
+      left: -50%;
+      top: 81%;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      right: -50%;
+      bottom: -20%;
+    }
+
+    to {
+      right: -50%;
+      bottom: 81%;
+    }
   }
   .listBackground {
     width: 200px;
@@ -207,5 +256,9 @@
   }
   .todoInput::placeholder {
     font-size: 1rem;
+  }
+  .searchContainer {
+    margin-right: 80px;
+    margin-left: 20px;
   }
 }

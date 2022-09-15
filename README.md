@@ -4,6 +4,11 @@
 
 https://singular-paprenjak-896541.netlify.app/
 
+## Test Login User and pass:
+
+User: test@rapptrlabs.com
+Password: Test123
+
 ## Brief Description
 
 The login form took me about 7 hours to complete. I had to use State to handle the user input, error handling, validation, and authentication (to protect the routes if a user is not logged in). When the validation state was true (green) I then would make the api call using axios in order for the user to login. At the that point I would switch the authentication state to true and that would navigate to the todo list page.
